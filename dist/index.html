@@ -1,0 +1,168 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, minimum-scale=1, user-scalable=no">
+    <title>Document</title>
+	<link rel="stylesheet" href="/dist/css/switch.scss">
+	<link rel="stylesheet" href="css/page-anim.css" /> 
+	<link rel="stylesheet" href="css/imagetrans.css" /> 
+
+    <style>
+        body {
+            overflow: hidden;
+			background-color: #7AB9E0;
+        }
+		/* width: 200px; height: 10px; */
+        .n { position: absolute; top: 150px;  background: #000; border : 2px solid yellow}
+        .n1 {top: 300px;}
+        .n2 {top: 450px;}
+        .n3 {top: 600px;}
+        .n4 {top: 750px;}
+        #block {
+            height: 100px;
+            width: 100px;
+            position: absolute;
+			background: fuchsia;
+			z-index: 100
+		}
+		#container {
+			width: 100vw;
+			height: 100vh;
+			position: fixed;
+			top: 0;
+			left: 0;
+			z-index: -1;
+			pointer-events: none;
+		}
+		#wrap {
+			/* z-index: 100; */
+			margin-left : 100px;
+		}
+		ul {
+			position: fixed;
+			top: 250;
+			right: 50;
+			z-index: 100;
+			border: 0px solid #000;
+			width: 10px;
+			height : 320px;
+			list-style: none;
+			margin: 0;
+			padding: 0;
+		}
+		li {
+			display: block;
+			width : 10px;
+			height: 30px;
+			background : paleturquoise;
+			border-radius: 5px;
+			margin : 20px;
+			font-size: 20px;
+			border: 0px solid #000;
+		}
+		li:hover {
+			background: yellow;
+		}
+		#detail-scene {
+			display: block;
+			z-index: 200;
+			opacity: 0;
+		}
+		.container-detail {
+			width: 100%;
+			min-height: 100vh;
+			/* background: #333; */
+			background-color: #FFF194;
+		}
+
+		
+    </style>
+</head>
+<body>
+	<div id="first-scene">
+		<section data-page="other" id="other">
+			<h1>The Page Other</h1>
+			<p>Some content on the other page.</p>
+			<p><a href="#home" data-role="page">GO TO HOME</a></p>
+			<div class="container">
+				<div class="image">
+				  <img src="img/image-0.jpg" class="img" alt="">
+				</div>
+			  </div>
+		</section>
+		<section data-page="home" id="home">
+			<h1>Home</h1>
+			<p>Some content on the other page.</p>
+			<p><a href="#other" data-role="page">GO TO OTHER</a></p>
+			<div class="container">
+				<div class="image">
+				  <img src="img/image-1.jpg" class="img" alt="">
+				</div>
+			  </div>
+		</section>
+
+		<ul class="nav">
+			<li data-nav="0"></li>
+			<li data-nav="1"></li>
+			<li data-nav="2"></li>
+			<li data-nav="3"></li>
+			<li data-nav="4"></li>
+			<!-- <li data-nav="5"></li>
+			<li data-nav="6"></li>
+			<li data-nav="7"></li> -->
+		</ul>
+		<div id="wrap">
+			<!-- <a href="#other"> -->
+			<div class="n n0">
+				<img  data-role="link" src="img/image-0.jpg" width="128">
+			</div>
+			<!-- </a> -->
+			<div class="n n1">
+				<img  data-role="link" src="img/image-1.jpg" width="128">
+			</div>
+			<div class="n n2">
+				<img data-role="link"  src="img/image-2.jpg" width="128">
+			</div>
+			<div class="n n3">
+				<img  data-role="link" src="img/image-3.jpg" width="128">
+			</div>
+			<div class="n n4">
+				<img  data-role="link"  src="img/image-4.jpg" width="128">
+			</div>
+		</div>
+		<!-- <a href="other.html"><button>Click</button></a> -->
+		<!-- <div id="block"></div> -->
+		<div id="container"></div>
+	</div>
+	
+	<div id = "detail-scene">
+		<div class="three-js">Three JS</div>
+		<!-- <div class="container-detail">
+			<div class="menu-top">
+			  <a href="index.html">BACK HOME</a>
+			  <a href="#" >ABOUT</a>
+			</div>
+	
+			<div>
+			  <img class="img-hover" id="selected_image" src="http://pixelcurse.com/wp-content/uploads/2011/02/minimalist_landscape_8.jpg" alt="">
+			</div>
+			<div class="name-text">Ueno</div>
+			<a class="down" href="#">Down</a>
+		</div> -->
+	</div>
+	<!-- <script src="../src/app.js"></script> -->
+	<script src="./js/three.bundle.js"></script>
+	<script src="./js/page-anim.js"></script> 
+	<script src="./js/switch.js"></script> 
+	<script src="./js/wrap.js"></script> 
+	
+	<script >
+		var element = document.querySelector('body');
+		// element.classList.remove('image');
+		setTimeout(function(){
+			element.classList.add('body-transition');
+		}, 300);
+
+	</script>
+</body>
+</html>
